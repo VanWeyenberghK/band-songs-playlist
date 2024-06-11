@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Band Songs Playlist</title>
+</head>
+<body>
+    <h1>Band Songs Playlist</h1>
+    <audio id="audioPlayer" controls>
+        Your browser does not support the audio element.
+    </audio>
+    <ul id="playlist">
+        <li><a href="https://drive.google.com/drive/folders/17Ozdbu4_Z-pLU6h3R7_70-0JuJVwsKDk?usp=drive_link">Song 1</a></li>
+        <li><a href="https://drive.google.com/drive/folders/1JtXD_YUTb6HOt8SBUZ3-i2WwuTNo-ya9?usp=drive_link">Song 2</a></li>
+        <li><a href="https://drive.google.com/drive/folders/1kCzxs1Yo49wOFGF1REvFqvpMHIqCL2z4?usp=drive_link">Song 3</a></li>
+        <!-- Add more songs as needed -->
+    </ul>
+
+    <script>
+        var audioPlayer = document.getElementById('audioPlayer');
+        var playlist = document.getElementById('playlist');
+        var links = playlist.getElementsByTagName('a');
+
+        for (var i = 0; i < links.length; i++) {
+            links[i].addEventListener('click', function(e) {
+                e.preventDefault();
+                audioPlayer.src = this.href;
+                audioPlayer.play();
+            });
+        }
+    </script>
+</body>
+</html>
